@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
 
     def create
       if params[:name] == nil
-        redirect_to login_path  
+        redirect_to login_path
       else
-        session[:username] = params[:username]
+        session[:name] = params[:name]
+        puts "Hi, #{params[:name]}"
         redirect_to root_path
       end
     end
